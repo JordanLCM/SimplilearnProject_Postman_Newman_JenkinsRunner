@@ -1,0 +1,50 @@
+{
+	"id": "8d570969-8f8e-45e8-8760-cbb25c3edb37",
+	"values": [
+		{
+			"key": "g_var1",
+			"value": "100",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "uid",
+			"value": "1",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "g_v1",
+			"value": "global_v1",
+			"type": "default",
+			"enabled": false
+		},
+		{
+			"key": "g_host",
+			"value": "www.dataaccess.com",
+			"enabled": false
+		},
+		{
+			"key": "User_Value",
+			"value": "2",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Get_Postman",
+			"value": "api/users?page=2",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Posting_Postman",
+			"value": "api/users",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2022-04-09T15:50:31.888Z",
+	"_postman_exported_using": "Postman/9.15.10"
+}

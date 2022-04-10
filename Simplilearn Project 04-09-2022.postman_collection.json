@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "bce120b5-9626-4bb3-8479-bf282b568ae7",
+		"name": "Simplilearn Project 04-09-2022",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.info(\"Get Test\")\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    console.info(pm.response.status)\r",
+							"    console.info(pm.response.code)\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/{{Get_Postman}}{{User_Value}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"{{Get_Postman}}{{User_Value}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.info(\"Post Test\")\r",
+							"pm.test(\"Status code is 201\", function(){\r",
+							"    console.info(pm.response.status)\r",
+							"    console.info(pm.response.code)\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Username is morpheus\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.info(\"jsonData\"+jsonData)\r",
+							"    console.info(jsonData)\r",
+							"    console.info(jsonData.name)\r",
+							"    pm.expect(jsonData.name).to.eql(\"morpheus\");\r",
+							"    pm.expect(jsonData.name).to.not.eql(\"morpheus1\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Job is leader\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.info(\"jsonData\"+jsonData)\r",
+							"    console.info(jsonData)\r",
+							"    console.info(jsonData.job)\r",
+							"    pm.expect(jsonData.job).to.eql(\"leader\");\r",
+							"    pm.expect(jsonData.job).to.not.eql(\"leader1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/{{Posting_Postman}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"{{Posting_Postman}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.info(\"Patch Test\")\r",
+							"pm.test(\"Status code is 200\", function(){\r",
+							"    console.info(pm.response.status)\r",
+							"    console.info(pm.response.code)\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Updated name is morpheus\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.info(\"jsonData\"+jsonData)\r",
+							"    console.info(jsonData)\r",
+							"    console.info(jsonData.name)\r",
+							"    pm.expect(jsonData.name).to.eql(\"morpheus\");\r",
+							"        pm.expect(jsonData.name).to.not.eql(\"morpheus1\");\r",
+							"\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Updated job is zion resident\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    console.info(\"jsonData\"+jsonData)\r",
+							"    console.info(jsonData)\r",
+							"    console.info(jsonData.job)\r",
+							"    pm.expect(jsonData.job).to.eql(\"zion resident\");\r",
+							"    pm.expect(jsonData.job).to.not.eql(\"zion resident1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/{{Posting_Postman}}{{User_Value}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"{{Posting_Postman}}{{User_Value}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.info(\"Patch Test\")\r",
+							"pm.test(\"Status code is 204\", function(){\r",
+							"    console.info(pm.response.status)\r",
+							"    console.info(pm.response.code)\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/{{Posting_Postman}}{{User_Value}}",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"{{Posting_Postman}}{{User_Value}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
